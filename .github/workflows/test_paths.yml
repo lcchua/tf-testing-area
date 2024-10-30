@@ -14,7 +14,8 @@ jobs:
     name: Echo Paths Trigger
     runs-on: ubuntu-latest
     steps:
-      - name: Displat trigger event
+      - name: Display trigger event
         run: |
           echo "Trigger Event: ${{ github.event_name }}"
+          echo "Elements in Paths that changed: ${{ github.event.head_commit.modified }}"
           echo "Event Details: ${{ toJson(github.event) }}"
