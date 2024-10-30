@@ -45,4 +45,4 @@ jobs:
               if [[ $file != *${{ env.CURRENT_WORKFLOW_FNAME }} ]]; then 
                 echo "$file"
               fi
-          done
+          done 
