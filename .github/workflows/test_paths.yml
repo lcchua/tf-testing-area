@@ -17,6 +17,6 @@ jobs:
       - name: Display trigger event
         run: |
           echo "Trigger Event: ${{ github.event_name }}"
-          echo "GitHub Reference: ${{ github.Reference }}"
+          echo "GitHub Reference: ${{ github.ref }}"
           echo "Elements in Paths that changed: ${{ github.event.head_commit.modified }}"
           echo "Event Details: ${{ toJson(github.event) }}"
