@@ -1,0 +1,21 @@
+name: Test Paths Conditional
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "*.py"
+      - "config.yml"
+      - "data/**"
+
+jobs:
+  Test:
+    name: Echo Paths Trigger
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.head_commit.modified, 'data/') }}
+    steps:
+      - name: Displat trigger event
+        run: |
+          echo "Trigger Event: ${{ github.event_name }}"
+          echo "Event Details: ${{ toJson(github.event) }}"
