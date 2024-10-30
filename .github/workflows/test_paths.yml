@@ -9,6 +9,9 @@ on:
       - 'config.yml'
       - 'data/**'
 
+env:
+  CURRENT_WORKFLOW_FNAME: test_paths.yml
+
 jobs:
   Test:
     name: Echo Paths Trigger
@@ -33,9 +36,10 @@ jobs:
           else
              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
           fi
+
       - name: List changed files
         run: |
           echo "Elements in Paths that changed: "
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
-             echo "$file"
+              if [[ "$file" != *"${{ env.CURRENT_WORKFLOW_FNAME }}"; then echo "$file" fi
           done
