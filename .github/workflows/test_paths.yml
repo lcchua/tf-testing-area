@@ -13,7 +13,6 @@ jobs:
   Test:
     name: Echo Paths Trigger
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.modified, 'data/') }}
     steps:
       - name: Displat trigger event
         run: |
