@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - "*.py"
-      - "config.yml"
-      - "data/**"
+      - *.py
+      - config.yml
+      - data/**
 
 jobs:
   Test:
