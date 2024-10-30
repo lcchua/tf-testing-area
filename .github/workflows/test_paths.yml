@@ -7,7 +7,7 @@ on:
     paths:
       - '*.py'
       - 'config.yml'
-      - 'data/**''
+      - 'data/**'
 
 jobs:
   Test:
