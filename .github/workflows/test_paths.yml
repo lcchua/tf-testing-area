@@ -41,5 +41,5 @@ jobs:
         run: |
           echo "Elements in Paths that changed: "
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
-              if [[ "$file" != *"${{ env.CURRENT_WORKFLOW_FNAME }}" ]]; then echo "$file" fi
+              if [ "$file" != *"${{ env.CURRENT_WORKFLOW_FNAME }}" ]; then echo "$file" fi
           done
