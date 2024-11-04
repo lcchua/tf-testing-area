@@ -3,9 +3,6 @@ name: Test Paths Conditional
 on:
   workflow_dispatch
 
-env:
-  CURRENT_WORKFLOW_FNAME: test_paths.yml
-
 jobs:
   Test:
     name: Check if files same or not
