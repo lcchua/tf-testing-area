@@ -7,19 +7,19 @@ variable "env" {
 variable "vpc_name" {
   description = "The VPC Name to use"
   type        = string
-  default     = "lcchua-vpc-tf-module"
+  default     = "ce7-grp-1-clc-vpc"
 }
 
 variable "sg_name" {
   description = "Security group for http-https-ssh-mysql"
   type        = string
-  default     = "lcchua-sg-http-https-ssh-tf-module"
+  default     = "ce7-grp-1-clc-sg-http-https-ssh"
 }
 
 variable "ec2_name" {
   description = "Name of EC2"
   type        = string
-  default     = "lcchua-ec2-instance-tf-module"
+  default     = "ce7-grp-1-clc-ec2-instance"
 }
 
 variable "instance_type" {
