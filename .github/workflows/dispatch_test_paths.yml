@@ -1,0 +1,19 @@
+name: Test Paths Conditional
+
+on:
+  workflow_dispatch
+
+jobs:
+  Test:
+    name: Check if files same or not
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: |
+          diff -q "./train.csv" "data/train.csv"
+          if [ $? -eq 0 ]; then
+            echo "Files are identical so exit Step 1"
+            exit 1
+          fi
+      - name: Step 2
+        run: echo "Files ate different so complete Step 2"
