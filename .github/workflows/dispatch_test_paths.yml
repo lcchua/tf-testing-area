@@ -1,4 +1,4 @@
-name: Test Paths Conditional
+name: (dispatch) Test Paths Conditional
 
 on:
   workflow_dispatch
