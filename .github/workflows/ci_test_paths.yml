@@ -3,7 +3,7 @@ name: (PR) CI Test Paths Conditional
 on:
   pull_request:
     branches:
-      - develop
+      - main
     paths:
       - '*.py'
     #  - 'config.yml'
