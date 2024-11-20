@@ -1,4 +1,4 @@
-name: (push/PR) Test Paths Conditional
+name: (PR) Test Paths Conditional
 
 on:
   pull_request:
