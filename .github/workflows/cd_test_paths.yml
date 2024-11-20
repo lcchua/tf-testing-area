@@ -1,13 +1,9 @@
-name: (push/PR) Test Paths Conditional
+name: (push) Test Paths Conditional
 
 on:
   push:
     branches:
-      - main
-      - develop  
-  pull_request:
-    branches:
-      - main
+      - develop
     paths:
       - '*.py'
     #  - 'config.yml'
