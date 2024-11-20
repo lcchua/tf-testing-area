@@ -1,4 +1,4 @@
-name: (PR) CI Test Paths Conditional
+name: (push) CI Test Paths Conditional
 
 on:
   push:
