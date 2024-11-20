@@ -1,0 +1,48 @@
+name: (push/PR) Test Paths Conditional
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - '*.py'
+    #  - 'config.yml'
+    #  - 'data/**'
+
+env:
+  CURRENT_WORKFLOW_FNAME: test_paths.yml
+
+jobs:
+  Test:
+    name: Echo Paths Trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display trigger event
+        run: |
+          echo "Trigger Event: ${{ github.event_name }}"
+          echo "GitHub Reference: ${{ github.ref }}"
+          echo "Event Details: ${{ toJson(github.event) }}"
+     
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          if ${{ github.event_name == 'pull_request' }}; then
+              echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
+          else
+              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: List changed files
+        run: |
+          echo "Elements in Paths that changed: "
+          list=(${{ steps.changed-files.outputs.changed_files }})
+          for file in "${list[@]}"; do
+              if [[ $file != *${{ env.CURRENT_WORKFLOW_FNAME }} ]]; then 
+                echo "$file"
+              fi
+          done 
