@@ -1,7 +1,7 @@
 name: (pr) CD Test Paths Conditional
 
 on:
-  pull_request:
+  push:
     branches:
       - main
       - develop
