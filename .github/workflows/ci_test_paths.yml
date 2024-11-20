@@ -1,4 +1,4 @@
-name: (PR) Test Paths Conditional
+name: (PR) CI Test Paths Conditional
 
 on:
   pull_request:

@@ -1,4 +1,4 @@
-name: (push) Test Paths Conditional
+name: (push) CD Test Paths Conditional
 
 on:
   push:
