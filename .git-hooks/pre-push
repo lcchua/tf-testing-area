@@ -1,0 +1,5 @@
+#!/bin/bash
+flake8 *.py
+echo "Ran Python code linting"
+
+exit 0
