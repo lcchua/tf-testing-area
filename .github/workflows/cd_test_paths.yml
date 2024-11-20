@@ -1,4 +1,4 @@
-name: (push) CD Test Paths Conditional
+name: (pr) CD Test Paths Conditional
 
 on:
   pull_request:
